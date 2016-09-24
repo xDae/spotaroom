@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/app-logo.css';
 
 const AppLogo = ({slogan}) => {
 	let renderSlogan = text => {

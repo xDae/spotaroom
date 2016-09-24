@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './../styles/list-menu.css';
-
 const ListMenu = () => (
 	<ul className="list-menu">
 		<li className="list-menu__item">
