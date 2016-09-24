@@ -1,0 +1,13 @@
+.card-container {
+  flex-grow: 1;
+
+  @include mq(tablet) {
+    height: calc(100vh - 190px);
+    overflow: auto;
+  };
+
+  @include mq(desktop) {
+    height: calc(100vh - 100px);
+    padding: $margin-base*2;
+  };
+}

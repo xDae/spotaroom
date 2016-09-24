@@ -1,0 +1,29 @@
+.sidebar {
+  min-width: 200px;
+  margin-bottom: $margin-base*2;
+
+	@include mq(tablet) {
+		display: flex;
+		flex-direction: column;
+	};
+
+  @include mq(tablet, desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  };
+
+  @include mq(desktop) {
+    margin-bottom: 0;
+    margin-right: $margin-base*2;
+  };
+
+  &__sorting {
+    min-width: 200px;
+    margin-bottom: $margin-base*2;
+
+    @include mq(tablet, desktop) {
+      margin-bottom: 0;
+    };
+  }
+}

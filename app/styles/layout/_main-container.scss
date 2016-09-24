@@ -1,0 +1,13 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+	@include mq($until: tablet) {
+		height: calc(100vh - 116px);
+		overflow-y: auto;
+	};
+
+  @include mq(desktop) {
+    flex-direction: row;
+  };
+}
