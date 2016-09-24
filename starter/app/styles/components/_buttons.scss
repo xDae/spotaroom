@@ -1,0 +1,28 @@
+.button {
+  font-family: 'Luckiest Guy', cursive;
+  padding: 10px 16px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  border: 0;
+  cursor: pointer;
+
+  &--primary {
+    background: $primary;
+    border-bottom: 4px solid $primary-dark;
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+
+  &--secondary {
+    background: $secondary;
+    border-bottom: 4px solid $secondary-dark;
+
+    &:hover {
+      background: $secondary-dark;
+    }
+  }
+}

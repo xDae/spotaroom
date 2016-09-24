@@ -1,0 +1,8 @@
+.app-wrapper {
+	max-width: 1100px;
+  margin: 0 $margin-base;
+
+  @include mq(wide) {
+    margin: 0 auto;
+  };
+}
