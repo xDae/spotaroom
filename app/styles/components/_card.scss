@@ -4,7 +4,7 @@
   padding: $margin-base;
   background: lighten($gray-lighter, 15%);
 	overflow: hidden;
-  transition: background 0.1s ease;
+  transition: background 0.2s ease;
 
   @include mq(phablet) {
     flex-direction: row;

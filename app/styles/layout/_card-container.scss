@@ -4,6 +4,7 @@
   @include mq(tablet) {
     height: calc(100vh - 190px);
     overflow: auto;
+		padding: $margin-base 0;
   };
 
   @include mq(desktop) {
