@@ -11,10 +11,10 @@
   };
 
   &:hover {
-    background: $gray-lighter;
+    background: lighten($gray-lighter, 12%);
 
 		.card__img {
-			box-shadow: 22px 22px 32px -18px rgba($gray-dark, 0.20);
+			box-shadow: 16px 16px 30px -16px rgba($gray-dark, 0.90);
 			transform: translate(-$margin-base/2, -$margin-base/2);
 			filter: brightness(120%);
 		}

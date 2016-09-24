@@ -10,7 +10,7 @@
 
   &--primary {
     background: $primary;
-    border-bottom: 4px solid $primary-dark;
+    border-bottom: 6px solid $primary-dark;
 
     &:hover {
       background: $primary-dark;
@@ -19,7 +19,7 @@
 
   &--secondary {
     background: $secondary;
-    border-bottom: 4px solid $secondary-dark;
+    border-bottom: 6px solid $secondary-dark;
 
     &:hover {
       background: $secondary-dark;
