@@ -1,0 +1,33 @@
+.App {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+/* color palette */
+.primary-dark {
+	color: #146A21;
+}
+
+.primary {
+	color: #3E8F32;
+}
+
+.secondary {
+	color: #F19319;
+}
+
+.secondary-light {
+	color: #FED104;
+}
+
+.gray-dark {
+	color: #343233,
+}
+
+.gray {
+	color: #A3A3A3;
+}
+
+.gray-lighter {
+	color: #D2D2D2;
+}
