@@ -98,7 +98,6 @@ class App extends Component {
 						</Select>
 
 						<Button
-							className="u-mr"
 							type="primary"
 							text="Download JSON"
 							handleClick={this.downloadJson}

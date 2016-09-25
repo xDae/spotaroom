@@ -38,7 +38,7 @@ class CardContainer extends React.Component {
       case 'ASC':
         return sortBy(list, price => price.pricePerMonth);
       case 'DESC':
-        return this.state.rooms.reverse();
+        return sortBy(list, price => price.pricePerMonth).reverse();
       default:
         return list;
     }
