@@ -24,13 +24,20 @@ class App extends Component {
   componentDidMount() {
     getRooms()
     .then(response => {
-      // console.log(response.data.data.homecards);
       let { homecards } = response.data.data;
       this.setState({homecards});
     })
     .catch(error => {
       console.log(error);
     });
+  }
+
+  setTypeFilter = filter => {
+    this.setState({ type: filter });
+  }
+
+  setFilterOrder = order => {
+    this.setState({ order: order });
   }
 
   render() {
@@ -41,24 +48,26 @@ class App extends Component {
         <div className="main-container">
           <Sidebar>
             <Select
+              handleChange={this.setTypeFilter}
               value={this.state.type}
               className="sidebar__sorting"
               title="Property type:"
               rightIcon={<Icon className="select__icon" type="angle-down" />}
             >
-              <option value="all" defaultValue>All</option>
+              <option value="all">All</option>
               <option value="room_shared">Room shared</option>
               <option value="studio">Studio</option>
             </Select>
 
             <Select
+              handleChange={this.setFilterOrder}
               value={this.state.order}
               className="sidebar__sorting"
-              title="Property type:"
+              title="Sort by price:"
               rightIcon={<Icon className="select__icon" type="angle-down" />}
             >
-              <option value="ASC" defaultValue>Ascending</option>
-              <option value="DES">Descending</option>
+              <option value="ASC">Ascending</option>
+              <option value="DESC">Descending</option>
             </Select>
 
             <Button className="u-mr" type="primary" text="Download JSON" />
