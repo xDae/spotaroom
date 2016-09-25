@@ -13,47 +13,49 @@ import Select from './Components/Select';
 import Icon from './Components/Icon';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.state = {
+		this.state = {
 			isLoading: true,
-      homecards: [],
-      type: 'all',
-      order: 'ASC'
-    };
-  }
+			homecards: [],
+			type: 'all',
+			order: 'ASC'
+		};
+	}
 
-  componentDidMount() {
-    getRooms()
-    .then(response => {
-      let { homecards } = response.data.data;
-      this.setState({
+	componentDidMount() {
+		let { page } = this.props.params;
+
+		getRooms(page)
+		.then(response => {
+			let { homecards } = response.data.data;
+			this.setState({
 				homecards,
 				isLoading: false
 			});
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  }
+		})
+		.catch(error => {
+			console.log(error);
+		});
+	}
 
-  setTypeFilter = filter => {
-    this.setState({ type: filter });
-  }
+	setTypeFilter = filter => {
+		this.setState({ type: filter });
+	}
 
-  setFilterOrder = order => {
-    this.setState({ order: order });
-  }
+	setFilterOrder = order => {
+		this.setState({ order: order });
+	}
 
-  downloadJson = () => {
-    download(JSON.stringify(this.state.homecards), 'spotaroom.json', 'application/json');
-  }
+	downloadJson = () => {
+		download(JSON.stringify(this.state.homecards), 'spotaroom.json', 'application/json');
+	}
 
 	renderCards = isLoading => {
 		if (isLoading) {
-      return <Loading text="loading" />;
-    }
+			return <Loading text="loading" />;
+		}
 
 		return (
 			<CardContainer
@@ -64,51 +66,51 @@ class App extends Component {
 		)
 	}
 
-  render() {
-    return (
-      <div className="app-wrapper">
-        <AppHeader />
+	render() {
+		return (
+			<div className="app-wrapper">
+				<AppHeader />
 
-        <div className="main-container">
-          <Sidebar>
-            <Select
-              handleChange={this.setTypeFilter}
-              value={this.state.type}
-              className="sidebar__sorting"
-              title="Property type:"
-              rightIcon={<Icon className="select__icon" icon="angle-down" />}
-            >
-              <option value="all">All</option>
-              <option value="room_shared">Room shared</option>
-              <option value="studio">Studio</option>
-              <option value="residence">Residence</option>
-            </Select>
+				<div className="main-container">
+					<Sidebar>
+						<Select
+							handleChange={this.setTypeFilter}
+							value={this.state.type}
+							className="sidebar__sorting"
+							title="Property type:"
+							rightIcon={<Icon className="select__icon" icon="angle-down" />}
+						>
+							<option value="all">All</option>
+							<option value="room_shared">Room shared</option>
+							<option value="studio">Studio</option>
+							<option value="residence">Residence</option>
+						</Select>
 
-            <Select
-              handleChange={this.setFilterOrder}
-              value={this.state.order}
-              className="sidebar__sorting"
-              title="Sort by price:"
-              rightIcon={<Icon className="select__icon" icon="angle-down" />}
-            >
-              <option value="ASC">Ascending</option>
-              <option value="DESC">Descending</option>
-            </Select>
+						<Select
+							handleChange={this.setFilterOrder}
+							value={this.state.order}
+							className="sidebar__sorting"
+							title="Sort by price:"
+							rightIcon={<Icon className="select__icon" icon="angle-down" />}
+						>
+							<option value="ASC">Ascending</option>
+							<option value="DESC">Descending</option>
+						</Select>
 
-            <Button
-              className="u-mr"
-              type="primary"
-              text="Download JSON"
-              handleClick={this.downloadJson}
-            />
-          </Sidebar>
+						<Button
+							className="u-mr"
+							type="primary"
+							text="Download JSON"
+							handleClick={this.downloadJson}
+						/>
+					</Sidebar>
 
 					{this.renderCards(this.state.isLoading)}
 
-        </div>
-      </div>
-    );
-  }
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;
