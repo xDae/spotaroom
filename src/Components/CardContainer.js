@@ -21,8 +21,8 @@ class CardContainer extends React.Component {
   }
 
   setList(rooms, order, type) {
-    var filteredList = this.filterList(rooms, type);
-    return this.orderList(filteredList, order);
+    var list = this.filterList(rooms, type);
+    return this.orderList(list, order);
   }
 
   filterList(list, type = 'all') {
