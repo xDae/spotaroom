@@ -57,6 +57,7 @@ class App extends Component {
               <option value="all">All</option>
               <option value="room_shared">Room shared</option>
               <option value="studio">Studio</option>
+              <option value="residence">Residence</option>
             </Select>
 
             <Select

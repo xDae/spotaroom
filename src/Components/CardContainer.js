@@ -12,23 +12,36 @@ class CardContainer extends React.Component {
     };
   }
 
-  orderList(list, order = 'ASC') {
-    switch(order) {
-      case 'ASC':
-        return sortBy(list, price => price.pricePerMonth);
-      case 'DESC':
-          return sortBy(list, price => price.pricePerMonth).reverse();
-      default:
-        return list;
-    }
-  }
-
   componentWillReceiveProps(nextProps) {
     let {rooms, order, type} = nextProps;
 
     this.setState({
-      rooms: this.orderList(rooms, order)
+      rooms: this.setList(rooms, order, type)
     })
+  }
+
+  setList(rooms, order, type) {
+    var filteredList = this.filterList(rooms, type);
+    return this.orderList(filteredList, order);
+  }
+
+  filterList(list, type = 'all') {
+    if (type === 'all') {
+      return list;
+    } else {
+      return list.filter(room => room.type === type);
+    }
+  }
+
+  orderList(list, order = 'ASC') {
+    switch(order) {
+      case 'ASC':
+      return sortBy(list, price => price.pricePerMonth);
+      case 'DESC':
+      return this.state.rooms.reverse();
+      default:
+      return list;
+    }
   }
 
   render() {
@@ -45,7 +58,6 @@ class CardContainer extends React.Component {
       </div>
     );
   }
-
 }
 
 CardContainer.propTypes = {
