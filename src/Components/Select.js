@@ -12,7 +12,6 @@ const Select = ({title, value, rightIcon, className, handleChange, children}) =>
 				<select
 					onChange={setValue}
 					defaultValue={value}
-					name="property-type"
 					className="select__input"
 				>
 					{children}
@@ -22,7 +21,6 @@ const Select = ({title, value, rightIcon, className, handleChange, children}) =>
 		</div>
 	)
 };
-
 
 Select.propTypes = {
 	title: React.PropTypes.string,
