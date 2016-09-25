@@ -5,6 +5,7 @@ import getRooms from './getRooms';
 
 // Components
 import AppHeader from './Components/AppHeader';
+import Loading from './Components/Loading';
 import Sidebar from './Components/Sidebar';
 import CardContainer from './Components/CardContainer';
 import Button from './Components/Button';
@@ -16,6 +17,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+			isLoading: true,
       homecards: [],
       type: 'all',
       order: 'ASC'
@@ -26,7 +28,10 @@ class App extends Component {
     getRooms()
     .then(response => {
       let { homecards } = response.data.data;
-      this.setState({homecards});
+      this.setState({
+				homecards,
+				isLoading: false
+			});
     })
     .catch(error => {
       console.log(error);
@@ -44,6 +49,20 @@ class App extends Component {
   downloadJson = () => {
     download(JSON.stringify(this.state.homecards), 'spotaroom.json', 'application/json');
   }
+
+	renderCards = isLoading => {
+		if (isLoading) {
+      return <Loading text="loading" />;
+    }
+
+		return (
+			<CardContainer
+				rooms={this.state.homecards}
+				order={this.state.order}
+				type={this.state.type}
+			/>
+		)
+	}
 
   render() {
     return (
@@ -84,11 +103,8 @@ class App extends Component {
             />
           </Sidebar>
 
-          <CardContainer
-            rooms={this.state.homecards}
-            order={this.state.order}
-            type={this.state.type}
-          />
+					{this.renderCards(this.state.isLoading)}
+
         </div>
       </div>
     );

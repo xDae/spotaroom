@@ -8,7 +8,6 @@ class CardContainer extends React.Component {
     super(props);
 
     this.state = {
-      isLoading: true,
       rooms: this.props.rooms
     };
   }
