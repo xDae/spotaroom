@@ -1,17 +1,13 @@
 import React from 'react';
 
-const ListMenu = () => (
+const ListMenu = ({children}) => (
 	<ul className="list-menu">
-		<li className="list-menu__item">
-			<a className="list-menu__link" href="#">The company</a>
-		</li>
-		<li className="list-menu__item">
-			<a className="list-menu__link" href="#">How we work</a>
-		</li>
-		<li className="list-menu__item">
-			<a className="list-menu__link" href="#">Contact us</a>
-		</li>
+		{children}
 	</ul>
 );
+
+ListMenu.propTypes = {
+	children: React.PropTypes.arrayOf(React.PropTypes.element)
+};
 
 export default ListMenu;
