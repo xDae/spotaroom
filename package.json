@@ -1,5 +1,6 @@
 {
   "name": "spotaroom",
+	"homepage": "http://josemiguel.org/spotaroom/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
