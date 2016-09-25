@@ -10,20 +10,25 @@ import RoomCard from './Components/RoomCard';
 class App extends Component {
 	constructor(props) {
 		super(props);
-		// this.state = ;
+
+		this.state = {
+			homecards: []
+		};
 	}
 
 	componentDidMount() {
-		axios.get('https://www.spotahome.com/api/public/listings/search/homecards/9')
-		.then(function (response) {
-			console.log(response);
-			console.log(response.data);
-	    console.log(response.status);
-	    console.log(response.statusText);
-	    console.log(response.headers);
-	    console.log(response.config);
+		axios({
+			method: 'get',
+			baseUrl: 'https://www.spotahome.com/api/',
+			url: '/public/listings/search/homecards/9',
+			withCredentials: true
 		})
-		.catch(function (error) {
+		.then(response => {
+			// console.log(response.data.data.homecards);
+			let { homecards } = response.data.data;
+			this.setState({homecards});
+		})
+		.catch(error => {
 			console.log(error);
 		});
 	}

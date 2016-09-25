@@ -1,13 +1,15 @@
 {
   "name": "spotaroom",
-	"homepage": "http://josemiguel.org/spotaroom/",
+  "homepage": "http://josemiguel.org/spotaroom/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.5.1"
   },
+	"proxy": "https://www.spotahome.com/api",
   "dependencies": {
     "axios": "^0.14.0",
+    "classnames": "^2.2.5",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
