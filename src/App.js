@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import download from 'downloadjs';
+import uniq from 'lodash.uniq';
+import sentenceCase from 'sentence-case';
 
 import getRooms from './getRooms';
 
@@ -48,6 +50,14 @@ class App extends Component {
 		this.setState({ order: order });
 	}
 
+	setRoomCategories = rooms => {
+		let categories = uniq(rooms.map(room => room.type));
+
+		return categories.map(cat => {
+			return <option key={cat} value={cat}>{sentenceCase(cat)}</option>;
+		})
+	}
+
 	downloadJson = () => {
 		download(JSON.stringify(this.state.homecards), 'spotaroom.json', 'application/json');
 	}
@@ -81,9 +91,7 @@ class App extends Component {
 							rightIcon={<Icon className="select__icon" icon="angle-down" />}
 						>
 							<option value="all">All</option>
-							<option value="room_shared">Room shared</option>
-							<option value="studio">Studio</option>
-							<option value="residence">Residence</option>
+							{this.setRoomCategories(this.state.homecards)}
 						</Select>
 
 						<Select
@@ -105,7 +113,6 @@ class App extends Component {
 					</Sidebar>
 
 					{this.renderCards(this.state.isLoading)}
-
 				</div>
 			</div>
 		);
