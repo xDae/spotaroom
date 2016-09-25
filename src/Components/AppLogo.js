@@ -9,8 +9,9 @@ const AppLogo = ({slogan}) => {
 
 	return (
 		<div className="app-logo">
-			<h1 className="app-logo__main">spot<span className="app-logo__circled">a</span>room</h1>
-			{renderSlogan(slogan)}
+			<h1 className="app-logo__main">spot<span className="app-logo__circled">a</span>room
+				{renderSlogan(slogan)}
+			</h1>
 		</div>
 	)
 };

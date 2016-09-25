@@ -152,6 +152,7 @@ iframe {
   .card-container {
     height: calc(100vh - 190px);
     overflow: auto;
+    padding: 10px 0;
   }
 }
 
@@ -264,6 +265,7 @@ iframe {
   -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
+  line-height: 1.4;
   margin: 0 auto;
   padding: 10px;
   width: 100%;
@@ -290,8 +292,8 @@ iframe {
   padding: 10px;
   background: #f8f8f8;
   overflow: hidden;
-  -webkit-transition: background 0.1s ease;
-  transition: background 0.1s ease;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 @media (min-width: 32.5em) {
