@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   downloadJson = () => {
-    download(JSON.stringify(this.state.homecards), "spotaroom.json", "application/json");
+    download(JSON.stringify(this.state.homecards), 'spotaroom.json', 'application/json');
   }
 
   render() {
