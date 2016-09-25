@@ -8,6 +8,7 @@ class CardContainer extends React.Component {
     super(props);
 
     this.state = {
+      isLoading: true,
       rooms: this.props.rooms
     };
   }
@@ -36,11 +37,11 @@ class CardContainer extends React.Component {
   orderList(list, order = 'ASC') {
     switch(order) {
       case 'ASC':
-      return sortBy(list, price => price.pricePerMonth);
+        return sortBy(list, price => price.pricePerMonth);
       case 'DESC':
-      return this.state.rooms.reverse();
+        return this.state.rooms.reverse();
       default:
-      return list;
+        return list;
     }
   }
 

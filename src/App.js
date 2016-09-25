@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import download from 'downloadjs';
 
 import getRooms from './getRooms';
 
@@ -40,6 +41,10 @@ class App extends Component {
     this.setState({ order: order });
   }
 
+  downloadJson = () => {
+    download(JSON.stringify(this.state.homecards), "spotaroom.json", "application/json");
+  }
+
   render() {
     return (
       <div className="app-wrapper">
@@ -52,7 +57,7 @@ class App extends Component {
               value={this.state.type}
               className="sidebar__sorting"
               title="Property type:"
-              rightIcon={<Icon className="select__icon" type="angle-down" />}
+              rightIcon={<Icon className="select__icon" icon="angle-down" />}
             >
               <option value="all">All</option>
               <option value="room_shared">Room shared</option>
@@ -65,13 +70,18 @@ class App extends Component {
               value={this.state.order}
               className="sidebar__sorting"
               title="Sort by price:"
-              rightIcon={<Icon className="select__icon" type="angle-down" />}
+              rightIcon={<Icon className="select__icon" icon="angle-down" />}
             >
               <option value="ASC">Ascending</option>
               <option value="DESC">Descending</option>
             </Select>
 
-            <Button className="u-mr" type="primary" text="Download JSON" />
+            <Button
+              className="u-mr"
+              type="primary"
+              text="Download JSON"
+              handleClick={this.downloadJson}
+            />
           </Sidebar>
 
           <CardContainer

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Title from './Title';
+
 const Sidebar = ({children}) => (
 	<div className="sidebar">
-		<h2 className="h2-title u-mb--large">Filters</h2>
+		<Title className="u-mb--large" text="Filters" />
 		{children}
 	</div>
 );

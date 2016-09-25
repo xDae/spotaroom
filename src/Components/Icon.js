@@ -1,16 +1,16 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Icon = ({type, className}) => {
+const Icon = ({icon, className}) => {
 	let iconClass = classNames('fa', {
-		[`fa-${type}`]: true
+		[`fa-${icon}`]: true
 	}, className);
 
 	return <i className={iconClass} aria-hidden="true"></i>;
 };
 
 Icon.propTypes = {
-	type: React.PropTypes.string.isRequired,
+	icon: React.PropTypes.string.isRequired,
 	className: React.PropTypes.string
 };
 
