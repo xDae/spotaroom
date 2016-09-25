@@ -25,10 +25,11 @@
     &:before {
       display: block;
       position: absolute;
-      top: -3px;
+      top: -8px;
       left: -8px;
       width: 46px;
       text-align: center;
+			line-height: 1.2;
       height: 46px;
       border-radius: 300px;
       color: $secondary-light;
