@@ -8,7 +8,7 @@ const Button = ({link, text, type, className, handleClick}) => {
 
 	let buttonClick = e => {
 		if (handleClick) {
-			 e.preventDefault()
+			e.preventDefault()
 			handleClick();
 		}
 	}
