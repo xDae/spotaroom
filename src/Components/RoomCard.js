@@ -1,30 +1,33 @@
 import React from 'react';
+import Button from './Button';
+import PriceTag from './PriceTag';
 
-const RoomCard = ({}) => (
+const RoomCard = ({title, photo, price}) => (
 	<div className="card u-mb--large">
 		<div className="card__img">
-			<a href="#"><img src="https://d1052pu3rm1xk9.cloudfront.net/smww_768_verified_ur_6_50/15c70201f731d39e96a2f91290305c3d83c435c7555d2f0619b800af.jpg" alt="Budget 9 Sqm Studio for Rent Near Gar du Nord, Paris" /></a>
+			<a href="#"><img src={photo} alt={title} /></a>
 		</div>
 		<div className="card__info">
 			<div className="card__title-wrapper u-mb">
 				<h3 className="card__title">
-					<a className="card__link" href="#">Budget 9 Sqm Studio for Rent Near Gar du Nord, Paris
-					</a>
+					<a className="card__link" href="#">{title}</a>
 				</h3>
 				<div className="card__price u-mt u-ml">
-					<span className="price-tag">421€</span>
+					<PriceTag price={price} currency="€" />
 				</div>
 			</div>
 			<div className="card__buttons">
-				<a className="button button--secondary u-mr" href="#">More details</a>
-				<a className="button button--primary" href="#">Book now!</a>
+				<Button className="u-mr" type="secondary" text="More details" />
+				<Button type="primary" text="Book now!" />
 			</div>
 		</div>
 	</div>
 );
 
-// RoomCard.propTypes = {
-// 	: React.PropTypes.
-// };
+RoomCard.propTypes = {
+	title: React.PropTypes.string,
+	photo: React.PropTypes.string,
+	price: React.PropTypes.number
+};
 
 export default RoomCard;

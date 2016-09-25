@@ -6,7 +6,7 @@
   "devDependencies": {
     "react-scripts": "0.5.1"
   },
-	"proxy": "https://www.spotahome.com/api",
+  "proxy": "https://www.spotahome.com/api",
   "dependencies": {
     "axios": "^0.14.0",
     "classnames": "^2.2.5",
