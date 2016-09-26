@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.5.1"
+    "enzyme": "^2.4.1",
+    "react-addons-test-utils": "^15.3.2",
+    "react-scripts": "^0.6.0"
   },
   "proxy": "https://www.spotahome.com/api",
   "dependencies": {
