@@ -24,13 +24,13 @@ describe('<App />', () => {
 		expect(app.find('AppHeader').length).toEqual(1);
 	});
 
-	it('shows loading cirles when its loading', () => {
+	it('shows <loading /> component when its loading', () => {
 		let	app = shallow(<App />);
 
     expect(app.find('Loading').length).toEqual(1);
   });
 
-	it('shows the card list when loading has finished', function () {
+	it('shows <CardContainer /> when loading has finished', function () {
 		let	app = shallow(<App />);
 
 		app.setState({ isLoading: false });
