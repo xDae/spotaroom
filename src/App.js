@@ -3,6 +3,8 @@ import download from 'downloadjs';
 import uniq from 'lodash.uniq';
 import sentenceCase from 'sentence-case';
 
+import './styles/App.css';
+
 import getRooms from './getRooms';
 
 // Components

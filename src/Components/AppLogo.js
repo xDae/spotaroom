@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './../styles/AppLogo.css';
+
 const AppLogo = ({slogan}) => {
 	let renderSlogan = text => {
 		if (text) {

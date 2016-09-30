@@ -5,6 +5,8 @@ import AppLogo from './AppLogo';
 import ListMenu from './ListMenu';
 import ListItem from './ListItem';
 
+import './../styles/AppHeader.css';
+
 const AppHeader = () => (
 	<div className="app-header u-mv--large">
 		<AppLogo slogan="The best to find your home"/>

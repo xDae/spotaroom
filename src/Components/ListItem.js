@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './../styles/ListItem.css';
+
 const ListItem = ({link, text}) => (
 	<li className="list-menu__item">
 		<a className="list-menu__link" href={link}>{text}</a>

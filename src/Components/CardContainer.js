@@ -2,6 +2,7 @@ import React from 'react';
 import sortBy from 'lodash.sortby';
 
 import RoomCard from './RoomCard';
+import './../styles/CardContainer.css';
 
 class CardContainer extends React.Component {
   constructor(props) {

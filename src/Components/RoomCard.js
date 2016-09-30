@@ -1,4 +1,7 @@
 import React from 'react';
+
+import './../styles/Card.css';
+
 import Button from './Button';
 import PriceTag from './PriceTag';
 

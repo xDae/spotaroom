@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import './../styles/Button.css';
+
 const Button = ({link, text, type, className, handleClick}) => {
 	let btnClass = classNames('button', className, {
 		[`button--${type}`]: true

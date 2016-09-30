@@ -1,0 +1,26 @@
+.select {
+  position: relative;
+}
+
+.select__input {
+  border: 1px solid #D2D2D2;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+  color: #A3A3A3;
+}
+
+.select__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  font-size: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}

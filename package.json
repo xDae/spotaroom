@@ -14,11 +14,13 @@
     "axios": "^0.14.0",
     "classnames": "^2.2.5",
     "downloadjs": "^1.4.6",
+    "font-awesome": "^4.6.3",
     "lodash.sortby": "^4.7.0",
     "lodash.uniq": "^4.5.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
+    "ress": "^1.1.1",
     "sentence-case": "^2.1.0"
   },
   "scripts": {

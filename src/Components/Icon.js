@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import 'font-awesome/css/font-awesome.min.css';
+
 const Icon = ({icon, className}) => {
 	let iconClass = classNames('fa', {
 		[`fa-${icon}`]: true

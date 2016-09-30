@@ -4,6 +4,10 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import App from './App';
 
+// css reset:
+import 'ress';
+import './styles/main.css';
+
 ReactDOM.render(
 	<Router history={browserHistory}>
     <Route path="/" component={App}>

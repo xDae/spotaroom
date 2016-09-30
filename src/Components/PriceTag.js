@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './../styles/PriceTag.css';
+
 const PriceTag = ({price, currency}) => (
 	<span className="price-tag">{price}{currency}</span>
 );
