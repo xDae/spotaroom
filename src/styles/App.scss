@@ -1,0 +1,71 @@
+@import "./config/variables";
+@import "./config/mq-config";
+
+.app-wrapper {
+	max-width: 1100px;
+  margin: 0 $margin-base;
+
+  @include mq(wide) {
+    margin: 0 auto;
+  };
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+	@include mq($until: tablet) {
+		height: calc(100vh - 116px);
+		overflow-y: auto;
+	};
+
+  @include mq(desktop) {
+    flex-direction: row;
+  };
+}
+
+/* Utility classes */
+.u-m {
+  margin: 10px;
+}
+
+.u-mt {
+  margin-top: 10px;
+}
+
+.u-mr {
+  margin-right: 10px;
+}
+
+.u-mb {
+  margin-bottom: 10px;
+}
+
+.u-ml {
+  margin-left: 10px;
+}
+
+.u-m--large {
+  margin: 20px;
+}
+
+.u-mt--large {
+  margin-top: 20px;
+}
+
+.u-mr--large {
+  margin-right: 20px;
+}
+
+.u-mb--large {
+  margin-bottom: 20px;
+}
+
+.u-ml--large {
+  margin-left: 20px;
+}
+
+.u-mv--large {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

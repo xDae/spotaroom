@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@kadira/storybook": "^2.5.2",
+    "custom-react-scripts": "0.0.13",
     "enzyme": "^2.4.1",
-    "react-addons-test-utils": "^15.3.2",
-    "react-scripts": "^0.6.1",
-    "@kadira/storybook": "^2.5.2"
+    "react-addons-test-utils": "^15.3.2"
   },
   "proxy": "https://www.spotahome.com/api",
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
     "ress": "^1.1.1",
+    "sass-mq": "^3.2.9",
     "sentence-case": "^2.1.0"
   },
   "scripts": {

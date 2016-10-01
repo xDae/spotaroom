@@ -1,0 +1,17 @@
+@import "./config/variables";
+@import "./config/mq-config";
+
+.card-container {
+  flex-grow: 1;
+
+  @include mq(tablet) {
+    height: calc(100vh - 190px);
+    overflow: auto;
+		padding: $margin-base 0;
+  };
+
+  @include mq(desktop) {
+    height: calc(100vh - 100px);
+    padding: $margin-base;
+  };
+}

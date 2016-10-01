@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './../styles/AppLogo.css';
+import './../styles/AppLogo.scss';
 
 const AppLogo = ({slogan}) => {
 	let renderSlogan = text => {

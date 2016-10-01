@@ -2,10 +2,9 @@ import React from 'react';
 
 // Components
 import AppLogo from './AppLogo';
-import ListMenu from './ListMenu';
-import ListItem from './ListItem';
+import { ListMenu, ListItem } from './ListMenu';
 
-import './../styles/AppHeader.css';
+import './../styles/AppHeader.scss';
 
 const AppHeader = () => (
 	<div className="app-header u-mv--large">

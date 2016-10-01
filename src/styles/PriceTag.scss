@@ -1,0 +1,12 @@
+@import "./config/variables";
+@import "./config/mq-config";
+
+.price-tag {
+  display: inline-block;
+  padding: 10px 10px 2px;
+  font-family: 'Luckiest Guy', cursive;
+  color: $secondary-light;
+  background: $gray-dark;
+  border-radius: 16px;
+  font-size: 26px;
+}

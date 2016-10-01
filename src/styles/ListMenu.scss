@@ -1,0 +1,34 @@
+@import "./config/variables";
+@import "./config/mq-config";
+
+.list-menu {
+  display: flex;
+  margin: 0;
+  list-style: none;
+
+  @include mq(tablet) {
+    align-self: flex-end;
+  }
+
+  &__item {
+		font-size: 14px;
+
+		@include mq(phablet) {
+	    font-size: 16px;
+	  }
+
+    &:not(:last-child):after {
+      content: "-";
+      margin: 0 6px 0 4px;
+    }
+  }
+
+  &__link {
+    color: $secondary-light;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}

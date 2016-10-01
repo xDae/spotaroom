@@ -1,0 +1,53 @@
+@import "./config/variables";
+@import "./config/mq-config";
+
+.app-logo {
+  display: inline-block;
+  position: relative;
+  color: $gray-dark;
+  margin-bottom: $margin-base;
+
+  @include mq(tablet) {
+    margin-bottom: 0;
+  };
+
+  &__main {
+    display: inline-block;
+    position: relative;
+    font-family: 'Luckiest Guy', cursive;
+    margin: 0;
+    font-size: 50px;
+  }
+
+  &__circled {
+    position: relative;
+    margin: 0 8px;
+    color: transparent;
+    z-index: 3;
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: -8px;
+      width: 46px;
+      text-align: center;
+      line-height: 1.2;
+      height: 46px;
+      border-radius: 300px;
+      color: $secondary-light;
+      background-color: $gray-dark;
+      content: "a";
+      z-index: 1;
+    }
+  }
+
+  &__slogan {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    color: $gray;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './../styles/Select.css';
+import './../styles/Select.scss';
 
 const Select = ({title, value, rightIcon, className, handleChange, children}) => {
 	let labelTitle = title => <label className="label-title u-mb">{title}</label>;

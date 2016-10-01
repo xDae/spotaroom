@@ -6,7 +6,7 @@ import App from './App';
 
 // css reset:
 import 'ress';
-import './styles/main.css';
+import './styles/main.scss';
 
 ReactDOM.render(
 	<Router history={browserHistory}>

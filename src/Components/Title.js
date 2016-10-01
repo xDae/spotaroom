@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './../styles/Title.css';
+import './../styles/Title.scss';
 
 const Title = ({text, className}) => {
 	let titleClass = classNames('h2-title', className);

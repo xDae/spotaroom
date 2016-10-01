@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './../styles/Card.css';
+import './../styles/Card.scss';
 
 import Button from './Button';
 import PriceTag from './PriceTag';
@@ -15,7 +15,7 @@ const RoomCard = ({title, photo, price}) => (
 				<h3 className="card__title">
 					<a className="card__link" href="#">{title}</a>
 				</h3>
-				<div className="card__price u-mt u-ml">
+				<div className="card__price u-ml">
 					<PriceTag price={price} currency="€" />
 				</div>
 			</div>

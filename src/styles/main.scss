@@ -1,9 +1,11 @@
+@import "./config/variables";
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  color: #343233;
+  color: $gray-dark;
 }
 
 img {
@@ -12,5 +14,5 @@ img {
 
 a {
   font-weight: bold;
-  color: #FED104;
+  color: $secondary-light;
 }

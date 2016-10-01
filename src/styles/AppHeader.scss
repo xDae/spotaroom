@@ -1,0 +1,14 @@
+@import "./config/variables";
+@import "./config/mq-config";
+
+.app-header {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(tablet) {
+    flex-flow: row;
+    height: 60px;
+  };
+}

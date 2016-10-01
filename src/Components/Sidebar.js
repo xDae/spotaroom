@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Title from './Title';
-import './../styles/Sidebar.css';
+import './../styles/Sidebar.scss';
 
 const Sidebar = ({children}) => (
 	<div className="sidebar">

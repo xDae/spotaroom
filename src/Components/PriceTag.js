@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './../styles/PriceTag.css';
+import './../styles/PriceTag.scss';
 
 const PriceTag = ({price, currency}) => (
 	<span className="price-tag">{price}{currency}</span>

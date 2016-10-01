@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './../styles/Button.css';
+import './../styles/Button.scss';
 
 const Button = ({link, text, type, className, handleClick}) => {
 	let btnClass = classNames('button', className, {
