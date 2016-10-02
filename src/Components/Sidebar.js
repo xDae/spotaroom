@@ -5,8 +5,8 @@ import Title from './Title';
 import styles from './../styles/Sidebar.scss';
 
 const Sidebar = ({children, className}) => (
-	<div styleName="sidebar">
-		<Title className={className} text="Filters" />
+	<div styleName="sidebar" className={className}>
+		<Title text="Filters" className="u-mb" />
 		{children}
 	</div>
 );
