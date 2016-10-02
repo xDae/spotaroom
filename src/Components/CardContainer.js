@@ -1,8 +1,9 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import sortBy from 'lodash.sortby';
 
 import RoomCard from './RoomCard';
-import './../styles/CardContainer.scss';
+import styles from './../styles/CardContainer.scss';
 
 class CardContainer extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class CardContainer extends React.Component {
 
   render() {
     return (
-      <div className="card-container">
+      <div styleName="card-container">
         {this.state.rooms.map(({id, title, mainPhotoUrl, pricePerMonth}) => (
           <RoomCard
             key={id}
@@ -65,4 +66,4 @@ CardContainer.propTypes = {
   rooms: React.PropTypes.array
 };
 
-export default CardContainer;
+export default CSSModules(CardContainer, styles, {allowMultiple: true});

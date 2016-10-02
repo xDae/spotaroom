@@ -56,6 +56,10 @@
     }
   }
 
+	&__price {
+		margin-left: $margin-base;
+	}
+
   &__link {
     color: $gray-dark;
     text-decoration: none;

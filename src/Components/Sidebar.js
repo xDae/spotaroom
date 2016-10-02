@@ -1,13 +1,14 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 
 import Title from './Title';
-import './../styles/Sidebar.scss';
+import styles from './../styles/Sidebar.scss';
 
-const Sidebar = ({children}) => (
-	<div className="sidebar">
-		<Title className="u-mb--large" text="Filters" />
+const Sidebar = ({children, className}) => (
+	<div styleName="sidebar">
+		<Title className={className} text="Filters" />
 		{children}
 	</div>
 );
 
-export default Sidebar;
+export default CSSModules(Sidebar, styles, {allowMultiple: true});

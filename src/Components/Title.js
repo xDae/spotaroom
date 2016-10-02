@@ -1,16 +1,14 @@
 import React from 'react';
-import classNames from 'classnames';
+import CSSModules from 'react-css-modules';
 
-import './../styles/Title.scss';
+import styles from './../styles/Title.scss';
 
 const Title = ({text, className}) => {
-	let titleClass = classNames('h2-title', className);
-
-	return <h2 className={titleClass}>{text}</h2>;
+	return <h2 styleName="h2-title" className={className}>{text}</h2>;
 }
 
 Title.propTypes = {
 	text: React.PropTypes.string.isRequired
 };
 
-export default Title;
+export default CSSModules(Title, styles, {allowMultiple: true});

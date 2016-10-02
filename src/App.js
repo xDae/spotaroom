@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
 import download from 'downloadjs';
 import uniq from 'lodash.uniq';
 import sentenceCase from 'sentence-case';
 
-import './styles/App.scss';
+import styles from './styles/App.scss';
+import sidebarStyles from './styles/Sidebar.scss';
 
 import getRooms from './getRooms';
 
@@ -49,7 +51,7 @@ class App extends Component {
 	}
 
 	setFilterOrder = order => {
-		this.setState({ order: order });
+		this.setState({ order });
 	}
 
 	setRoomCategories = rooms => {
@@ -66,7 +68,7 @@ class App extends Component {
 
 	renderCards = isLoading => {
 		if (isLoading) {
-			return <Loading text="loading" />;
+			return <Loading className="animated fadeIn" text="loading" />;
 		}
 
 		return (
@@ -80,17 +82,17 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="app-wrapper">
-				<AppHeader />
+			<div styleName="app-wrapper">
+				<AppHeader className="u-mv--large"/>
 
-				<div className="main-container">
-					<Sidebar>
+				<div styleName="main-container">
+					<Sidebar className="u-mb--large">
 						<Select
 							handleChange={this.setTypeFilter}
 							value={this.state.type}
-							className="sidebar__sorting"
+							className={sidebarStyles.sidebar__sorting}
 							title="Property type:"
-							rightIcon={<Icon className="select__icon" icon="angle-down" />}
+							rightIcon={<Icon styleName="select__icon" icon="angle-down" />}
 						>
 							<option value="all">All</option>
 							{this.setRoomCategories(this.state.homecards)}
@@ -99,9 +101,9 @@ class App extends Component {
 						<Select
 							handleChange={this.setFilterOrder}
 							value={this.state.order}
-							className="sidebar__sorting"
+							className={sidebarStyles.sidebar__sorting}
 							title="Sort by price:"
-							rightIcon={<Icon className="select__icon" icon="angle-down" />}
+							rightIcon={<Icon styleName="select__icon" icon="angle-down" />}
 						>
 							<option value="ASC">Ascending</option>
 							<option value="DESC">Descending</option>
@@ -121,4 +123,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default CSSModules(App, styles, {allowMultiple: true});

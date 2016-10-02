@@ -24,7 +24,7 @@
     animation: spin-a 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
   }
 
-  > div > .c2 {
+  .c2 {
     top: 10px;
     left: auto;
     right: 10px;
@@ -32,7 +32,7 @@
     animation: spin-b 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
   }
 
-  > div > .c3 {
+  .c3 {
     top: auto;
     left: auto;
     right: 10px;
@@ -41,7 +41,7 @@
     animation: spin-c 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
   }
 
-  > div > .c4 {
+  .c4 {
     top: auto;
     bottom: 10px;
     transform-origin: 20px -4px;

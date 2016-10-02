@@ -1,25 +1,26 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 
-import './../styles/Card.scss';
+import styles from './../styles/Card.scss';
 
 import Button from './Button';
 import PriceTag from './PriceTag';
 
-const RoomCard = ({title, photo, price}) => (
-	<div className="card u-mb--large">
-		<div className="card__img">
+const RoomCard = ({title, photo, price, className}) => (
+	<div styleName="card" className="u-mb--large">
+		<div styleName="card__img">
 			<a href="#"><img src={photo} alt={title} /></a>
 		</div>
-		<div className="card__info">
-			<div className="card__title-wrapper u-mb">
-				<h3 className="card__title">
-					<a className="card__link" href="#">{title}</a>
+		<div styleName="card__info">
+			<div styleName="card__title-wrapper" className="u-mb">
+				<h3 styleName="card__title">
+					<a styleName="card__link" href="#">{title}</a>
 				</h3>
-				<div className="card__price u-ml">
+				<div styleName="card__price">
 					<PriceTag price={price} currency="€" />
 				</div>
 			</div>
-			<div className="card__buttons">
+			<div styleName="card__buttons">
 				<Button className="u-mr" type="secondary" text="More details" />
 				<Button type="primary" text="Book now!" />
 			</div>
@@ -33,4 +34,4 @@ RoomCard.propTypes = {
 	price: React.PropTypes.number
 };
 
-export default RoomCard;
+export default CSSModules(RoomCard, styles, {allowMultiple: true});

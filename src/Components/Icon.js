@@ -1,14 +1,15 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 
-import 'font-awesome/css/font-awesome.min.css';
+import styles from 'font-awesome/css/font-awesome.min.css';
 
 const Icon = ({icon, className}) => {
 	let iconClass = classNames('fa', {
 		[`fa-${icon}`]: true
-	}, className);
+	});
 
-	return <i className={iconClass} aria-hidden="true"></i>;
+	return <i styleName={iconClass} className={className} aria-hidden="true"></i>;
 };
 
 Icon.propTypes = {
@@ -16,4 +17,4 @@ Icon.propTypes = {
 	className: React.PropTypes.string
 };
 
-export default Icon;
+export default CSSModules(Icon, styles, {allowMultiple: true});

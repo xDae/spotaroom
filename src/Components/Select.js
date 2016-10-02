@@ -1,20 +1,21 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 
-import './../styles/Select.scss';
+import styles from './../styles/Select.scss';
 
 const Select = ({title, value, rightIcon, className, handleChange, children}) => {
-	let labelTitle = title => <label className="label-title u-mb">{title}</label>;
+	let labelTitle = title => <label className="u-mb">{title}</label>;
 
 	let setValue = event => handleChange(event.target.value);
 
 	return (
 		<div className={className}>
 			{labelTitle(title)}
-			<div className="select">
+			<div styleName="select">
 				<select
 					onChange={setValue}
 					defaultValue={value}
-					className="select__input"
+					styleName="select__input"
 				>
 					{children}
 				</select>
@@ -29,4 +30,4 @@ Select.propTypes = {
 	rightIcon: React.PropTypes.element
 };
 
-export default Select;
+export default CSSModules(Select, styles, {allowMultiple: true});

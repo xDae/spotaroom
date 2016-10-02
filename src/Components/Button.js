@@ -1,21 +1,22 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 
-import './../styles/Button.scss';
+import styles from './../styles/Button.scss';
 
 const Button = ({link, text, type, className, handleClick}) => {
-	let btnClass = classNames('button', className, {
+	let btnClass = classNames('button', {
 		[`button--${type}`]: true
 	});
 
 	let buttonClick = e => {
 		if (handleClick) {
-			e.preventDefault()
+			e.preventDefault();
 			handleClick();
 		}
 	}
 
-	return <a onClick={buttonClick} className={btnClass} href={link}>{text}</a>;
+	return <a onClick={buttonClick} className={className} styleName={btnClass} href={link}>{text}</a>;
 };
 
 Button.defaultProps = {
@@ -28,4 +29,4 @@ Button.propTypes = {
 	type: React.PropTypes.string.isRequired
 };
 
-export default Button;
+export default CSSModules(Button, styles, {allowMultiple: true});

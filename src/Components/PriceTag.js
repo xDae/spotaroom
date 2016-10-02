@@ -1,9 +1,9 @@
 import React from 'react';
-
-import './../styles/PriceTag.scss';
+import CSSModules from 'react-css-modules';
+import styles from './../styles/PriceTag.scss';
 
 const PriceTag = ({price, currency}) => (
-	<span className="price-tag">{price}{currency}</span>
+	<span styleName="price-tag">{price}{currency}</span>
 );
 
 PriceTag.propTypes = {
@@ -11,4 +11,4 @@ PriceTag.propTypes = {
 	currency: React.PropTypes.string.isRequired
 };
 
-export default PriceTag;
+export default CSSModules(PriceTag, styles, {allowMultiple: true});
