@@ -5,7 +5,7 @@ import uniq from 'lodash.uniq';
 import sentenceCase from 'sentence-case';
 
 import styles from './styles/App.scss';
-import sidebarStyles from './styles/Sidebar.scss';
+import {sidebar__sorting} from './styles/Sidebar.scss';
 
 import getRooms from './getRooms';
 
@@ -90,7 +90,7 @@ class App extends Component {
 						<Select
 							handleChange={this.setTypeFilter}
 							value={this.state.type}
-							className={sidebarStyles.sidebar__sorting}
+							className={sidebar__sorting}
 							title="Property type:"
 							rightIcon={<Icon styleName="select__icon" icon="angle-down" />}
 						>
@@ -101,7 +101,7 @@ class App extends Component {
 						<Select
 							handleChange={this.setFilterOrder}
 							value={this.state.order}
-							className={sidebarStyles.sidebar__sorting}
+							className={sidebar__sorting}
 							title="Sort by price:"
 							rightIcon={<Icon styleName="select__icon" icon="angle-down" />}
 						>
